@@ -38,17 +38,6 @@ def pair_image(image):
     image.putdata(pixels)
     return image
 
-# def encode_binary_in_pair_image(binary_array, pair_image):
-#     pixels_index = 0
-#     pair_pixels = list(pair_image.getdata())
-#     matrice_pixels = [value+bit for value]
-#     while pixels_index < pair_image.width * pair_image.height and pixels_index < (len(binary_array)-1)*3:
-#         pair_pixels[pixels_index] = (pair_pixels[pixels_index][0]+int(binary_array[pixels_index*3]),
-#                                 pair_pixels[pixels_index][1]+int(binary_array[pixels_index*3+1]),
-#                                 pair_pixels[pixels_index][2]+int(binary_array[pixels_index*3+2]))
-#         pixels_index+=1
-#     pair_image.putdata(pair_pixels)
-#     return pair_image
 def encode_image(binarry_array, pair_image):
     if (len(binarry_array) > pair_image.width * pair_image.height):
         raise Exception("Message too long to be encoded in this image")
