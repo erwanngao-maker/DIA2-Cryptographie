@@ -35,7 +35,7 @@ def vigener_uncipher(text, password):
 	list_of_keys = [ord(char) for char in password]
 	for index,char in enumerate(text):
 		current_key = list_of_keys[index%len(list_of_keys)]
-		original_text[index] = cesar_uncipher(char,ord(current_key))
+		original_text.append( cesar_uncipher(char,ord(current_key)))
 	return original_text
 
 
@@ -58,7 +58,7 @@ def vigener_uncipher(text, password):
 
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
 # 	message = "le chocolat est bon"
 
 # 	crypted_text = cesar_cipher(message, 12) # exo 1
@@ -68,4 +68,3 @@ if __name__ == "__main__":
 # 	print(initial_message == message)
 
 # 	hack_cesar_cipher(crypted_text, alphabet=string.printable) # exo3
-
