@@ -22,7 +22,7 @@ for id,start in enumerate(explorators_start):
             amont = line["noeud_aval"]
             line = df_parcours_explorateurs.loc[df_parcours_explorateurs["noeud_amont"] ==amont ].iloc[0]
 
-df_parcours_explorateurs.to_csv("parcours_compled",index=False)
+df_parcours_explorateurs.to_csv("parcours_explorateurs_completed.csv",index=False)
      
 print(max(ways_length))
 
