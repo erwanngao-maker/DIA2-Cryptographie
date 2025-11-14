@@ -7,12 +7,12 @@ def dechiffre_cesar(message, shift):
     return "".join(chr((ord(message[index]) - shift)%1114111) for index in range(len(message)))
 
 #Fonctionne pour les characters d'unicodes inferieur 'range'
-def fast_brute_force(message,range):
+def fast_brute_force(message,range_char):
     min = ord(message[0])
     for letter in message:
         if ord(letter)< min:
             min = ord(letter)
-    for shift in range(min-range if min > range else 0,min):
+    for shift in range(min-range_char if min > range_char else 0,min):
         print(dechiffre_cesar(message,shift))
 
 

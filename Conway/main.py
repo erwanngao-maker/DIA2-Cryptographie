@@ -16,10 +16,8 @@ frame2 = np.array([[0,0,0,0,0,0,0],
                  [0,0,0,0,0,0,0]])
 
 def compute_number_neighbors(padded_frame, index_line, index_column):
-    number_neighbors = 0
-    for pixel_col in range(index_column,index_column+3):
-        for pixe_line in range(index_line,index_line+3):
-            number_neighbors+=padded_frame[pixe_line][pixel_col]
+    number_neighbors = sum(padded_frame[x][y] for x in range(index_line, index_line+3) 
+                                            for y in range(index_column, index_column+3))
     number_neighbors-=padded_frame[index_line+1][index_column+1]
     return number_neighbors
 
