@@ -1,2 +1,5 @@
 # Byte-compiled / cache files
 __pycache__/
+
+# Data files
+*.csv
